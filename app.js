@@ -17,7 +17,6 @@ app.get("/:operator/:num1/:num2", function(req, res) {
   var num1 = parseFloat(req.params.num1)
   var num2 = parseFloat(req.params.num2)
   var result
-  console.log(req.params)
 
   if(req.params.operator === 'add'){
     result = num1 + num2
@@ -31,7 +30,7 @@ app.get("/:operator/:num1/:num2", function(req, res) {
     console.log("Please type add, sub, mult, or div")
   }
 
-
+  res.send(String(result))
 })
 
 
